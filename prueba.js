@@ -2,7 +2,7 @@ alert("Hola Bienvenido")
 
 let salir
 
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 2; i++) {
     do {
         let nombreEmpresa = prompt ("Ingrese Empresa")
         let nombreIngresado = prompt ("Ingrese su Usuario")
