@@ -1,56 +1,56 @@
 
-// alert("Hola Bienvenido")
+alert("Hola Bienvenido")
 
-// let salir
+let salir
 
 
-//     do {
-//         let nombreEmpresa = prompt ("Ingrese Empresa")
-//         let nombreIngresado = parseInt (prompt ("Ingrese su Número de Usuario"))
+    do {
+        let nombreEmpresa = prompt ("Ingrese Empresa")
+        let nombreIngresado = parseInt (prompt ("Ingrese su Número de Usuario"))
 
-//         if (nombreEmpresa != "" && !nombreEmpresa.match("[A-Za-z]")){
-//             do {
-//                 alert("No ingresaste un nombre valido!")
-//                 nombreEmpresa = prompt ("Ingrese Empresa")
+        if (nombreEmpresa != "" && !nombreEmpresa.match("[A-Za-z]")){
+            do {
+                alert("No ingresaste un nombre valido!")
+                nombreEmpresa = prompt ("Ingrese Empresa")
                 
-//             } while (nombreEmpresa != "" && !nombreEmpresa.match("[A-Za-z]"))
+            } while (nombreEmpresa != "" && !nombreEmpresa.match("[A-Za-z]"))
             
-//         }
-//         else if (nombreIngresado != "" && isNaN(nombreIngresado)){
-//             do {
-//                 alert("No ingresaste número correcto")
-//                 nombreIngresado = parseInt (prompt ("Ingrese su Número de Usuario"))
+        }
+        else if (nombreIngresado != "" && isNaN(nombreIngresado)){
+            do {
+                alert("No ingresaste número correcto")
+                nombreIngresado = parseInt (prompt ("Ingrese su Número de Usuario"))
                 
-//             }while (nombreIngresado != "" && isNaN(nombreIngresado))
+            }while (nombreIngresado != "" && isNaN(nombreIngresado))
             
-//         }
-//         else alert ("Bienvenido a " + nombreEmpresa + " su legajo es " + nombreIngresado)
+        }
+        else alert ("Bienvenido a " + nombreEmpresa + " su legajo es " + nombreIngresado)
 
-//         // PREGUNTAR ZONA
+        // PREGUNTAR ZONA
 
-//         let entrada = prompt ("Que zona realizara " + nombreIngresado)
+        let entrada = prompt ("Que zona realizara " + nombreIngresado + "\n oeste \n este \n norte \n sur")
 
-//         if (entrada != "oeste" && entrada != "este" && entrada != "norte" && entrada != "sur"){
-//             do {
-//                 alert("No ingreso zona")
-//                 entrada = prompt ("Ingresa nuevamente la zona que realizara")
+        if (entrada != "oeste" && entrada != "este" && entrada != "norte" && entrada != "sur"){
+            do {
+                alert("No ingreso zona")
+                entrada = prompt ("Ingresa nuevamente la zona que realizara")
 
-//             }while (entrada != "oeste" && entrada != "este" && entrada != "norte" && entrada != "sur")
+            }while (entrada != "oeste" && entrada != "este" && entrada != "norte" && entrada != "sur")
 
-//         }
-//         if (entrada == "oeste"){
-//                 alert("Ingresando a zona oeste")
-//         }   else if (entrada == "este"){
-//                 alert("Ingresando a zona este")
-//         }   else if (entrada == "norte"){
-//                 alert("Ingresando a zona norte")
-//         }   else if (entrada == "sur"){
-//                 alert("Ingresando a zona sur")
-//         }
+        }
+        if (entrada == "oeste"){
+                alert("Ingresando a zona oeste")
+        }   else if (entrada == "este"){
+                alert("Ingresando a zona este")
+        }   else if (entrada == "norte"){
+                alert("Ingresando a zona norte")
+        }   else if (entrada == "sur"){
+                alert("Ingresando a zona sur")
+        }
 
-//         salir = prompt ("Salir?")
+        salir = prompt ("Salir?")
         
-//     } while (salir == "no")
+    } while (salir == "no")
 
 
 
@@ -88,26 +88,69 @@ producto2.sumaIva();
 producto1.vender();
 
 
-let verduleria = ["banana", "ciruela", "manzana"]
 
-// let sumarFuta = prompt("Cual desea sumar?")
 
-let eliminarFruta = prompt("Que fruta quiere eliminar?")
+// VERDULERIA
 
-// sumarFuta = sumarFuta.toLowerCase()
 
-eliminarFruta = eliminarFruta.toLowerCase()
+let verduleria = ["banana", "ciruela", "manzana", "coco"]
 
-// let verificarFutas = verduleria.indexOf(sumarFuta)
+// let salir
 
-let borrarFrutas = verduleria.indexOf(eliminarFruta)
+function AnadirFruta(){
 
-if(verificarFutas>=0){
-    verduleria.splice(borrarFrutas,1)
-
+    let sumarFruta = prompt("Que fruta quiere sumar?").toLowerCase()
+    if(sumarFruta != "no"){
+        verduleria.push(sumarFruta)
+    }
 }
-// }else if(eliminarFruta>=0){
-//     verduleria.splice(borrarFrutas,1)
-// }
 
-console.table(verduleria)
+
+function DesacerFrutas(){
+
+    let borrarFruta = prompt("Cual fruta desea eliminar?").toLowerCase()
+    let eliminarFrutas = verduleria.indexOf(borrarFruta)
+
+    if(eliminarFrutas>=0){
+        verduleria.splice(eliminarFrutas,1)
+    }
+}
+
+
+function BuscandoFruta(){
+
+    let buscarFruta = prompt("Que fruta esta buscando?").toLowerCase()
+    if(verduleria.includes(buscarFruta)){
+        alert("Si tengo " + buscarFruta)
+    }
+}
+
+
+do{
+    let entrada = prompt ("Que desea hacer en la verduleria? \n Mostrar \n Buscando \n Sumar \n Eliminar")
+
+    if (entrada != "mostrar" && entrada != "buscando" && entrada != "sumar" && entrada != "eliminar"){
+        do {
+            alert("No ingreso opcion")
+            entrada = prompt ("Ingresa nuevamente lo que quiere hacer")
+
+        }while (entrada != "mostrar" && entrada != "buscando" && entrada != "sumar" && entrada != "eliminar")
+
+    }
+    if (entrada == "mostrar"){
+            alert(verduleria)
+    }   else if (entrada == "buscando"){
+            BuscandoFruta()
+            alert(verduleria)
+    }   else if (entrada == "sumar"){
+            AnadirFruta()
+            alert(verduleria)
+    }   else if (entrada == "eliminar"){
+            DesacerFrutas()
+            alert(verduleria)
+    }
+
+
+    salir = prompt ("Salir?")
+}while (salir == "no")
+
