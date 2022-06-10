@@ -1,0 +1,1 @@
+import * as clases from './claseUsuario'
